@@ -1,7 +1,8 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript';
-
+import { Table, Column, Model, DataType, PrimaryKey } from 'sequelize-typescript';
+// อันนี้คือ model นะ entity ไม่มี config ข้างใน มีแต่ชื่อ Field
 @Table
 export class User extends Model<User> {
+    
     @Column({
         type: DataType.STRING,
         allowNull: false,
@@ -22,8 +23,7 @@ export class User extends Model<User> {
     password: string;
 
     @Column({
-        type: DataType.ENUM,
-        values: ['male', 'female'],
+        type: DataType.STRING,
         allowNull: false,
     })
     gender: string;
