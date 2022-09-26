@@ -1,6 +1,6 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript'
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../constants'
-import { User } from '../../modules/users/user.entity'
+import { Models } from './model.providers'
 
 const dbConfig = require('./database.config.js')
 export const databaseProviders = [
@@ -22,8 +22,7 @@ export const databaseProviders = [
           config = dbConfig.databaseConfig.development
       }
       const sequelize = new Sequelize(config)
-      sequelize.addModels([User])
-      //   sequelize.addModels([__dirname + 'path/src/models/*']);
+      sequelize.addModels(Models)
       await sequelize.sync()
       return sequelize
     }
