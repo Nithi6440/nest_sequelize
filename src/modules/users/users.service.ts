@@ -7,7 +7,7 @@ import { User } from 'src/core/models/users.model';
 @Injectable()
 export class UsersService {
 
-    constructor(@Inject('USERS_REPOSITORY') private readonly usersRepository: typeof User) { }
+    constructor(@Inject('USERS_REPOSITORY') private readonly userRepository: typeof User) { }
 
     // async create(user: CreateUserDto): Promise<User> {
     //     return await this.userRepository.create<Users>(user);
@@ -18,7 +18,7 @@ export class UsersService {
     // }
 
     async findAll(): Promise<User[]> {
-        return await this.usersRepository.findAll<User>();
+        return await this.userRepository.findAll<User>();
     }
 }
 
