@@ -11,5 +11,3 @@ import { DatabaseModule } from 'src/core/database/database.module'
   // exports: [UsersService]
 })
 export class UsersModule {}
-
-
