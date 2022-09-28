@@ -9,22 +9,26 @@ export class UsersController {
 
 
   @Post()
+  @HttpCode(201)
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
   }
 
   @Get()
+  @HttpCode(200)
   findAll() {
     console.log('get all users')
     return this.usersService.findAll();
   }
 
   @Get(':id')
+  @HttpCode(200)
   findOneById(@Param('id') id: string) {
     return this.usersService.findOneById(+id);
   }
 
   @Patch(':id')
+  @HttpCode(200)
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(+id, updateUserDto);
   }
