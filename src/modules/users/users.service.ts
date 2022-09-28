@@ -19,6 +19,7 @@ export class UsersService {
   ) {}
 
   async create(user: CreateUserDto) {
+    if(!user) throw new BadRequestException("Can't create User")
     try {
       await this.userRepository.create<Users>(user)
       return { statusCode: 200, message: 'Created Successfully' }
@@ -51,7 +52,7 @@ export class UsersService {
   }
 
   async update(id: number, body: UpdateUserDto) {
-    if (!id || id == undefined || body) throw new BadRequestException("Can't update User")
+    if (!id || id == undefined || !body) throw new BadRequestException("Can't update User")
     try {
       await this.findOneById(id)
       this.userRepository.update<Users>(body, { where: { id } })
