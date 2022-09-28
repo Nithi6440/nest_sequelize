@@ -25,7 +25,7 @@ export class UsersService {
       return { statusCode: 200, message: 'Created Successfully' }
     } catch (e) {
       console.log(e)
-      throw new InternalServerErrorException('Internal server error')
+      throw new InternalServerErrorException('Internal Server Error')
     }
   }
 
@@ -37,7 +37,7 @@ export class UsersService {
       return result
     } catch (e) {
       console.log(e)
-      throw new InternalServerErrorException('Internal server error')
+      throw new InternalServerErrorException('Internal Server Error')
     }
   }
 
@@ -47,7 +47,7 @@ export class UsersService {
       return result
     } catch (e) {
       console.log(e)
-      throw new InternalServerErrorException('Internal server error')
+      throw new InternalServerErrorException('Internal Server Error')
     }
   }
 
@@ -59,7 +59,7 @@ export class UsersService {
       return { statusCode: 200, message: 'Updated Successfully' }
     } catch (e) {
       console.log(e)
-      throw new InternalServerErrorException('Internal server error')
+      throw new InternalServerErrorException('Internal Server Error')
     }
   }
 
